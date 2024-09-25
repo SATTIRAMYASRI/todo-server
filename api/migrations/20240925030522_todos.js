@@ -10,6 +10,7 @@ exports.up = async function(knex) {
         tbl.increments();
         tbl.text('title',256).notNullable();
         tbl.text('status',200).notNullable();
+        tbl.integer('userId').unsigned().references('id').inTable('users');
     }
   )
 };
